@@ -1,4 +1,4 @@
-$navbar_height: 120px;
+$navbar_height: 86px;
 $global_shadow: 0px 0px 10px 1px rgba(122, 122, 122, 0.2);
 $global_margin: 40px;
 $global_padding: 40px;
@@ -14,10 +14,11 @@ $color_lite: rgb(221, 221, 221);
   background: whitesmoke;
 
   .navbar {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: white;
-    // min-height: $navbar_height;
+    min-height: $navbar_height;
     box-shadow: $global_shadow;
     padding-left: $global_padding;
     padding-right: $global_padding;
@@ -51,9 +52,9 @@ $color_lite: rgb(221, 221, 221);
           outline: none;
           i {
             color: $color_lite;
-            transition: color .3s;
+            transition: color 0.3s;
           }
-          transition: border .3s, color .3s, background .3s;
+          transition: border 0.3s, color 0.3s, background 0.3s;
 
           &:hover {
             border: 1px solid $color_hover;
@@ -74,18 +75,27 @@ $color_lite: rgb(221, 221, 221);
       }
     }
     .menu_bar {
+      position: absolute;
+      bottom: 0px;
       display: flex;
       flex-direction: row;
 
       .menu_item {
+        position: relative;
         padding: 10px 10px 12px 10px;
         color: $color_normal;
         font-size: 15px;
         cursor: pointer;
-        transition: color .3s;
+        transition: color 0.3s;
+
+        &::before {
+          content: "";
+          transition: background 0.3s;
+        }
+
         b {
           color: $color_lite;
-          transition: color .3s;
+          transition: color 0.3s;
         }
 
         &:hover {
@@ -94,14 +104,128 @@ $color_lite: rgb(221, 221, 221);
             color: $color_hover;
           }
         }
+
+        &.active {
+          &::before {
+            content: "";
+            position: absolute;
+            height: 3px;
+            background: $color_hover;
+            width: 100%;
+            left: 0px;
+            bottom: 0px;
+          }
+        }
       }
     }
   }
 
   .tasks {
-    // min-height: calc(100vh - #{$navbar_height});
-    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-height: calc(100vh - #{$navbar_height});
     padding-left: $global_padding;
     padding-right: $global_padding;
+    padding-top: 20px;
+
+    .task_content {
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      height: 200px;
+      width: 400px;
+      border: 1px solid rgb(236, 236, 236);
+      border-radius: 4px;
+      background: rgb(254, 254, 254);
+      margin: 5px;
+      box-shadow: $global_shadow;
+      padding: 20px;
+      transition: border 1s;
+
+      &:hover {
+        border: 1px solid $color_hover;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        .title {
+          font-size: 14px;
+          font-weight: bold;
+          // color: $color_normal;
+        }
+        margin-bottom: 15px;
+      }
+      .description {
+        display: flex;
+        flex: 1;
+        font-size: 13px;
+        color: $color_normal;
+      }
+      .footer {
+        display: flex;
+        flex-direction: row;
+
+        .date {
+          display: flex;
+          flex-direction: row;
+          // flex: 1;
+          align-items: center;
+          font-size: 12px;
+          color: $color_normal;
+
+          i {
+            margin-right: 3px;
+            color: $color_lite;
+          }
+        }
+        .down {
+          display: flex;
+          flex: 1;
+        }
+        .stars {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          // flex: 1;
+          align-items: center;
+          font-size: 12px;
+          color: $color_normal;
+          justify-content: flex-end;
+          cursor: pointer;
+          // transition: color .3s;
+
+          span {
+            margin-left: 3px;
+            width: 20px;
+            transition: color .3s;
+          }
+
+          .fa-plus {
+            font-size: 8px;
+            position: absolute;
+            top: 0px;
+            right: 36px;
+            transition: color .3s;
+            color: transparent;
+          }
+
+          i {
+            color: $color_lite;
+            transition: color .3s;
+          }
+
+          &:hover {
+            color: $color_hover;
+            i {
+              color: $color_hover;
+            }
+          }
+        }
+      }
+    }
   }
 }
