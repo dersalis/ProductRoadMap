@@ -132,6 +132,7 @@ $color_lite: rgb(221, 221, 221);
     padding-top: 20px;
 
     .task_content {
+      position: relative;
       display: flex;
       flex-direction: column;
       min-width: 300px;
@@ -172,7 +173,7 @@ $color_lite: rgb(221, 221, 221);
         .date {
           display: flex;
           flex-direction: row;
-          // flex: 1;
+          flex: 1;
           align-items: center;
           font-size: 12px;
           color: $color_normal;
@@ -182,10 +183,7 @@ $color_lite: rgb(221, 221, 221);
             color: $color_lite;
           }
         }
-        .down {
-          display: flex;
-          flex: 1;
-        }
+
         .stars {
           position: relative;
           display: flex;
@@ -223,6 +221,25 @@ $color_lite: rgb(221, 221, 221);
             i {
               color: $color_hover;
             }
+          }
+        }
+      }
+
+      .down {
+        position: absolute;
+        bottom: 5px;
+        left: calc(100% / 2);
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          color: $color_lite;
+          transition: color .3s;
+        }
+
+        &:hover {
+          i {
+            color: $color_hover;
           }
         }
       }

@@ -1,0 +1,24 @@
+<div class="task_box">
+    <div class="header">
+      <div class="title">
+          {{ title | truncate: 106 }}
+      </div>
+    </div>
+    <div class="description">
+        {{ description | truncate: 330 }}
+    </div>
+    <div class="footer">
+      <div class="date">
+        <i class="far fa-calendar"> </i>
+        <span>{{ createDate }}</span>
+      </div>
+      <div class="stars">
+        <i class="fas fa-plus"></i>
+        <i class="fas fa-star"></i>
+        <span>{{ stars }}</span>
+      </div>
+    </div>
+    <div class="down">
+      <i class="fas fa-chevron-circle-down"></i>
+    </div>
+  </div>

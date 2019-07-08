@@ -31,19 +31,21 @@
   </div>
   <div class="tasks">
 
-    <div class="task_content">
+    <app-task-box id="1"
+      title="{{ task.title}}"
+      description="{{ task.description }}"
+      createDate = "24.06.2019"
+      stars = "34"
+      *ngFor="let task of tasks"></app-task-box>
+
+    <!-- <div class="task_content" *ngFor="let task of tasks">
       <div class="header">
         <div class="title">
-          To jest tytuł zadania które wymyśliła nieznan mi bliżej osoba
+          {{ task.title | truncate: 106 }}
         </div>
       </div>
       <div class="description">
-        Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony,
-        kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum
-        jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie
-        do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie”
-        po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu
-        tekstu i wpisanie w...
+        {{ task.description | truncate: 520 }}
       </div>
       <div class="footer">
         <div class="date">
@@ -56,75 +58,10 @@
           <span>23</span>
         </div>
       </div>
-    </div>
-
-    <div class="task_content">
-      <div class="header">
-        <div class="title">
-          To jest tytuł zadania które wymyśliła nieznan mi bliżej osoba
-        </div>
+      <div class="down">
+        <i class="fas fa-chevron-circle-down"></i>
       </div>
-      <div class="description">
-        Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony,
-        kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum
-        jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie
-        do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie”
-        po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu
-        tekstu i wpisanie w...
-      </div>
-      <div class="footer">
-        <div class="date">
-          <i class="far fa-calendar"></i>
-          <span>23.06.2019</span>
-        </div>
-        <div class="stars">
-          <i class="fas fa-plus"></i>
-          <i class="fas fa-star"></i>
-          <span>23</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="task_content">
-      <div class="header">
-        <div class="title">
-          To jest tytuł zadania które wymyśliła nieznan mi bliżej osoba
-        </div>
-      </div>
-      <div class="description">
-        Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony,
-        kiedy ten chce zobaczyć sam jej wygląd. Jedną z mocnych stron używania Lorem Ipsum
-        jest to, że ma wiele różnych „kombinacji” zdań, słów i akapitów, w przeciwieństwie
-        do zwykłego: „tekst, tekst, tekst”, sprawiającego, że wygląda to „zbyt czytelnie”
-        po polsku. Wielu webmasterów i designerów używa Lorem Ipsum jako domyślnego modelu
-        tekstu i wpisanie w...
-      </div>
-      <div class="footer">
-        <div class="date">
-          <i class="far fa-calendar"></i>
-          <span>23.06.2019</span>
-        </div>
-        <div class="down">
-            <i class="fas fa-chevron-circle-down"></i>
-        </div>
-        <div class="stars">
-          <i class="fas fa-plus"></i>
-          <i class="fas fa-star"></i>
-          <span>23</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="task_content">
-
-    </div>
-
-    <div class="task_content">
-
-    </div>
-    <div class="task_content">
-
-    </div>
+    </div> -->
 
   </div>
 </div>
