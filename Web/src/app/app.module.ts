@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { TaskBoxComponent } from './components/task-box/task-box.component';
+import { TasksUnderConsiderationComponent } from './components/tasks-under-consideration/tasks-under-consideration.component';
+import { TasksPlannedComponent } from './components/tasks-planned/tasks-planned.component';
+import { TasksInProgressComponent } from './components/tasks-in-progress/tasks-in-progress.component';
+import { TasksTestingComponent } from './components/tasks-testing/tasks-testing.component';
+import { TasksLaunchedComponent } from './components/tasks-launched/tasks-launched.component';
 
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -12,7 +17,12 @@ import { TaskBoxComponent } from './components/task-box/task-box.component';
   declarations: [
     AppComponent,
     TruncatePipe,
-    TaskBoxComponent
+    TaskBoxComponent,
+    TasksUnderConsiderationComponent,
+    TasksPlannedComponent,
+    TasksInProgressComponent,
+    TasksTestingComponent,
+    TasksLaunchedComponent
   ],
   imports: [
     BrowserModule,

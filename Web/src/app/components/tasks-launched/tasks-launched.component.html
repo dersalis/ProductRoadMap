@@ -1,0 +1,13 @@
+<div class="title">
+    Wdrożone
+    <!-- <b>10</b> -->
+</div>
+
+<div class="tasks">
+
+    <app-task-box id="1" title="{{ task.title}}"
+      description="{{ task.description }}" createDate="24.06.2019" stars="34"
+      *ngFor="let task of tasks">
+    </app-task-box>
+
+  </div>

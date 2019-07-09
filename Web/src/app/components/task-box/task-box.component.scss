@@ -12,8 +12,9 @@ $color_lite: rgb(221, 221, 221);
   display: flex;
   flex-direction: column;
   min-width: 300px;
-  height: 170px;
-  width: 400px;
+  max-width: 500px;
+  // height: 170px;
+  // width: 400px;
   border: 1px solid rgb(236, 236, 236);
   border-radius: 4px;
   background: rgb(254, 254, 254);
@@ -24,24 +25,33 @@ $color_lite: rgb(221, 221, 221);
 
   &:hover {
     border: 1px solid $color_hover;
+
+    .down {
+      i {
+        color: $color_lite;
+      }
+    }
   }
 
   .header {
     display: flex;
     flex-direction: row;
+    // margin-bottom: 15px;
+
     .title {
       font-size: 14px;
       font-weight: bold;
-      // color: $color_normal;
     }
-    margin-bottom: 15px;
   }
+
   .description {
-    display: flex;
-    flex: 1;
+    // display: flex;
+    // flex: 1;
     font-size: 13px;
     color: $color_normal;
+    margin: 15px 0;
   }
+
   .footer {
     display: flex;
     flex-direction: row;
@@ -109,7 +119,7 @@ $color_lite: rgb(221, 221, 221);
 
     i {
       font-size: 20px;
-      color: $color_lite;
+      color: transparent;
       transition: color 0.3s;
     }
 
